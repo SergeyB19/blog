@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class Post {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -48,5 +49,14 @@ public class Post {
 
     public void setViews(int views) {
         this.views = views;
+    }
+
+    public Post() {
+    }
+
+    public Post(String title, String anonse, String full_text) {
+        this.title = title;
+        this.anonse = anonse;
+        this.full_text = full_text;
     }
 }
