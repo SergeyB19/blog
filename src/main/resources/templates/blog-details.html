@@ -10,11 +10,12 @@
 </header>
 
 <div class="container mt-5">
-    <h1>Блог сайта</h1>
     <div th:each="el : ${posts}" class="alert alert-info mt-2">
-        <h3 th:text="${el.title}"/>
-        <p th:text="${el.anonse}"/>
-        <a th:href=" '/blog/' + ${el.id}" class="btn btn-warning"/>Детальнее<a/>
+        <h1 th:text="${el.title}"/>
+        <p th:text="${el.full_text}"/>
+        <p th:text="${el.views}"/>
+        <a th:href=" '/blog/' + ${el.id} + '/edit'" class="btn btn-warning"/>Редактировать<a/>
+        <a th:href=" '/blog/' + ${el.id} + '/remove'" class="btn-warning"/>Удалить<a/>
     </div>
 </div>
 
